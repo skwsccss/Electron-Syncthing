@@ -33,8 +33,11 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         } else if (OSType == 'Windows_NT') {
             let response = await axios.get('http://127.0.0.1:8384/').then(res => {
-                return res.headers
-            })
+                    return res.headers
+                })
+                .catch(error => {
+                    console.log(error)
+                })
             if (response['set-cookie']) {
                 cookie = response['set-cookie'][0]
             }
@@ -194,6 +197,11 @@ window.addEventListener('DOMContentLoaded', () => {
             exe(exeFilePath, (error, data) => {
                 if (error) {
                     console.log(error)
+                    exe('.' + exeFilePath, (error, data) => {
+                        if (error) {
+                            console.log(error)
+                        }
+                    })
                 }
                 console.log(data);
             })
