@@ -5,8 +5,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const exe = require('child_process').execFile;
     const fixPath = require('fix-path');
     const os = require('os');
-    const exeFilePath = './sync/syncthing.exe'
-        //=> '/usr/bin'
+    const exeFilePath = './sync/syncthing.exe';
+    const cli = `start "syncthing" ./sync/syncthing.exe -no-console -no-browser`;
+    //=> '/usr/bin'
     fixPath();
     window.$ = window.jQuery = require('jquery')
     const { remote } = require('electron');
@@ -194,14 +195,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             }
         } else if (OSType == 'Windows_NT') {
-            exe(exeFilePath, (error, data) => {
+            exec(cli, (error, data) => {
                 if (error) {
                     console.log(error)
-                    exe('.' + exeFilePath, (error, data) => {
-                        if (error) {
-                            console.log(error)
-                        }
-                    })
                 }
                 console.log(data);
             })

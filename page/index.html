@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>XXX</title>
+    <title>Electron-Syncthing</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -45,7 +45,7 @@
                         </select>
                         <span class="input-group-text">http://localhost:8384/</span>
                     </div>
-                    <input type="text" class="form-control" id="url" required>
+                    <input type="text" class="form-control" id="url" placeholder="Please Enter REST API EndPoint" required>
                     <div class="input-group-append">
                         <button class="btn btn-primary input-group-text" type="button" id="fetch_data">Send</button>
                     </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="row" style="width: 80%; height:400px;">
             <div class="col-md-12 col-sm-12 text-center d-none" id="error">
-                <p style="color: red;"><strong>Please Enter REST api Key.</strong></p>
+                <p style="color: red;"><strong>Please Enter REST API Endpoint.</strong></p>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div id="preview"></div>

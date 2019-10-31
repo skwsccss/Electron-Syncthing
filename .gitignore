@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
-electron-syncthing-win32-x64
+builds
+release-builds

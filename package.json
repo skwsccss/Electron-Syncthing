@@ -7,7 +7,8 @@
         "start": "electron .",
         "pack": "build --dir",
         "dist": "build",
-        "package": "electron-packager . electron-syncthing --overwrite"
+        "mac": "electron-packager .  IA-Connect --overwrite",
+        "win": "electron-packager . IA-Connect --overwrite --platform=win32 --arch=ia32 --icon=./assets/sync.png --prune=true --out=builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron-Sync App\" && node copier.js && node builder.js --overwrite"
     },
     "build": {
         "appId": "firstApp",
@@ -26,7 +27,8 @@
     "devDependencies": {
         "electron": "^6.0.12",
         "electron-builder": "^21.2.0",
-        "electron-packager": "^14.0.6"
+        "electron-packager": "^14.0.6",
+        "electron-wix-msi": "^2.1.1"
     },
     "dependencies": {
         "axios": "^0.19.0",
